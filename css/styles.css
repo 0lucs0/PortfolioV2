@@ -12,7 +12,7 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: initial;
   transition: all 0.2s linear;
   line-height: 1.5;
 }
@@ -600,6 +600,7 @@ header .follow a:hover {
 .contact .icons-container .icons h3 {
   color: #666;
   font-size: 1.7rem;
+  text-transform: capitalize;
 }
 
 .contact .row {

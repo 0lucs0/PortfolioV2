@@ -40,15 +40,15 @@ function showProgress() {
   progressBar.forEach((progressBar) => {
     let value = progressBar.dataset.progress;
     progressBar.style.opacity = 1;
-    progressBar.style.width = `${value}%`
+    progressBar.style.width = `${value}%`;
   });
 }
 
-function hideProgress(){
-  progressBar.forEach(h3 =>{
+function hideProgress() {
+  progressBar.forEach((h3) => {
     h3.style.opacity = 0;
     h3.style.width = 0;
-  })
+  });
 }
 
 window.addEventListener("scroll", () => {
@@ -61,3 +61,17 @@ window.addEventListener("scroll", () => {
     hideProgress();
   }
 });
+
+function sendMail(params) {
+  let temParams = {
+    from_name: document.getElementById("from_name").value,
+    name: document.getElementById("name").value,
+    number: document.getElementById("number").value,
+    message: document.getElementById("message").value,
+  };
+
+  emailjs.send("service_x2ag1e6","template_z2s8dqt", temParams)
+  .then(function(res){
+    console.log("sucess", res.status);
+  })
+}
